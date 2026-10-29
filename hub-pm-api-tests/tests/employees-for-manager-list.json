@@ -1,0 +1,30 @@
+{
+  "method": "Main Ws / EmployeeService / GetEmployeesForManagerList",
+  "description": "Получение списка сотрудников руководителя. Валидный тест - все поля заполнены, дальше меняется одно поле, остальные валидные.",
+  "tests": [
+    {
+      "name": "(Search=часть фамилии) Main Ws / EmployeeService / GetEmployeesForManagerList",
+      "request": {
+        "Page": {
+          "Skip": 0,
+          "Take": 30
+        },
+        "ProjectId": null,
+        "IncludeCurrentUser": true,
+        "IgnoreProjectAdminsAndOwner": false,
+        "Statuses": [
+          1
+        ],
+        "UserId": 10002,
+        "Search": "Иван"
+      },
+      "rules": {
+        "ErrorMessage": null,
+        "IsSuccess": true,
+        "Value.Items[0].Email": "ivanov@example.com",
+        "Value.Items[0].Status": 1,
+        "Value.Page.Count": 1
+      }
+    }
+  ]
+}
