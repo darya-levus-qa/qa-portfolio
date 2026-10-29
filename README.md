@@ -24,8 +24,11 @@
 Postman (WebSocket), внутренний конструктор API-автотестов, Chrome DevTools, Figma, Таск-трекер, SQL, Buildin, Miro.
 
 ## Что в портфолио
-- `hub-pm-api-tests` - сценарии API-тестов в JSON, проверки доступов, скриншоты
-- `bug-reports` - примеры баг-репортов
+
+[Hub-PM - API-тесты (WebSocket)](hub-pm-api-tests/README.md):
+- чек-листы проверок по полям запросов
+- сценарии из юнитов
+- проверки прав доступа под разными ролями
 
 ## Контакты
 - Telegram: @Darya_Levus
