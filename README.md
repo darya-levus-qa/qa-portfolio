@@ -25,12 +25,13 @@ Postman (WebSocket), внутренний конструктор API-автот�
 
 ## Что в портфолио
 
-Все материалы - с проекта Hub-PM (WebSocket API), данные обезличены.
+Все материалы - с проекта Hub-PM, данные обезличены.
 
 - [Чек-лист: создание пользователя](hub-pm-api-tests/checklists/create-user.md) - 110 проверок
 - [Чек-лист: получение списка сотрудников руководителя](hub-pm-api-tests/checklists/employees-for-manager-list.md) - 47 проверок
 - [Сценарии из юнитов](hub-pm-api-tests/scenarios/scenarios.md) - 3 сценария: план на день, карта связей задач, шеринговая задача
 - [Проверки прав доступа](hub-pm-api-tests/security/access-checks.md) - прогон под пользователями с разными ролями
+- [UI-автотесты](hub-pm-ui-autotests/ui-autotests.md) - 3 теста интерфейса: папки и дашборды
 - [Баг-репорты](bug-reports/bug-reports.md) - 3 примера: функциональный баг, ошибка метода, права доступа
 
 ## Контакты
