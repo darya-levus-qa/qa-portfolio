@@ -10,7 +10,7 @@
     {
       "step": 2,
       "name": "Создать задачу",
-      "method": "Tasks / TaskSaveWsController / TaskCreate",
+      "method": "TaskCreate",
       "request": {
         "Description": "",
         "DifficultyId": "00000000-0000-0000-0000-000000000001",
@@ -35,7 +35,7 @@
     {
       "step": 3,
       "name": "Создать подзадачу 1 внутри задачи",
-      "method": "Tasks / TaskSaveWsController / TaskCreate",
+      "method": "TaskCreate",
       "request": {
         "Description": "",
         "DifficultyId": "00000000-0000-0000-0000-000000000001",
@@ -60,7 +60,7 @@
     {
       "step": 4,
       "name": "Создать подзадачу 2 внутри подзадачи 1",
-      "method": "Tasks / TaskSaveWsController / TaskCreate",
+      "method": "TaskCreate",
       "request": {
         "Description": "",
         "DifficultyId": "00000000-0000-0000-0000-000000000001",
@@ -85,7 +85,7 @@
     {
       "step": 5,
       "name": "Получение диаграммы связей задачи",
-      "method": "Main / ProjectTaskGetService / GetTaskDiagramRelation",
+      "method": "GetTaskDiagramRelation",
       "request": {
         "TaskId": "${Parameter.ParentTaskId}",
         "GroupBy": 0
@@ -102,7 +102,7 @@
     {
       "step": 6,
       "name": "Удалить задачу",
-      "method": "Tasks / TaskSaveWsController / TaskRemove",
+      "method": "TaskRemove",
       "request": {
         "TaskIds": ["${Parameter.ParentTaskId}"]
       },
@@ -115,7 +115,7 @@
     {
       "step": 7,
       "name": "Удалить подзадачу 1",
-      "method": "Tasks / TaskSaveWsController / TaskRemove",
+      "method": "TaskRemove",
       "request": {
         "TaskIds": ["${Parameter.ParentTaskId2}"]
       },
@@ -128,7 +128,7 @@
     {
       "step": 8,
       "name": "Удалить подзадачу 2",
-      "method": "Tasks / TaskSaveWsController / TaskRemove",
+      "method": "TaskRemove",
       "request": {
         "TaskIds": ["${Parameter.SubTaskId}"]
       },
