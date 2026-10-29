@@ -1,0 +1,31 @@
+{
+  "method": "Main Ws / PerformersSaveService / CreateUser",
+  "description": "Создание пользователя. Валидный тест - все поля заполнены, дальше меняется одно поле, остальные валидные.",
+  "tests": [
+    {
+      "name": "(Email=без @) Main Ws / PerformersSaveService / CreateUser - ошибка",
+      "request": {
+        "LastName": "Тестов",
+        "FirstName": "Тест",
+        "MiddleName": "Тестович",
+        "DateOfBrith": "2000-02-03T00:00:00",
+        "Foto": {
+          "Height": 534.1793103448275,
+          "Image": "data:image/jpeg;base64,...",
+          "Left": 0,
+          "MaxHight": 300,
+          "MaxWidth": 300,
+          "Top": 0,
+          "Width": 534.1793103448275
+        },
+        "Email": "testuserexample.com",
+        "AvatarColor": ""
+      },
+      "rules": {
+        "ErrorMessage": "Invalid request parameters",
+        "IsSuccess": false,
+        "ErrorCode": 400
+      }
+    }
+  ]
+}
