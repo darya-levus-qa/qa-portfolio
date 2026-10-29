@@ -1,9 +1,9 @@
 {
-  "method": "Main Ws / EmployeeService / GetEmployeesForManagerList",
+  "method": "GetEmployeesForManagerList",
   "description": "Получение списка сотрудников руководителя. Валидный тест - все поля заполнены, дальше меняется одно поле, остальные валидные.",
   "tests": [
     {
-      "name": "(Search=часть фамилии) Main Ws / EmployeeService / GetEmployeesForManagerList",
+      "name": "(Search=часть фамилии) GetEmployeesForManagerList",
       "request": {
         "Page": {
           "Skip": 0,
