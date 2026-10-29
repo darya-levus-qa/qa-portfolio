@@ -1,9 +1,9 @@
 {
-  "method": "Main Ws / UsersProfileService / EditProfile",
+  "method": "EditProfile",
   "description": "Редактирование профиля пользователя. Валидный тест - все поля заполнены, дальше меняется одно поле, остальные валидные.",
   "tests": [
     {
-      "name": "(валидные данные) Main Ws / UsersProfileService / EditProfile",
+      "name": "(валидные данные) EditProfile",
       "request": {
         "UserId": 10001,
         "FirstName": "Новый",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "name": "(Height=отрицательное значение) Main Ws / UsersProfileService / EditProfile",
+      "name": "(Height=отрицательное значение) EditProfile",
       "request": {
         "UserId": 10001,
         "FirstName": "Новый",
@@ -55,7 +55,7 @@
       }
     },
     {
-      "name": "(Width=0) Main Ws / UsersProfileService / EditProfile",
+      "name": "(Width=0) EditProfile",
       "request": {
         "UserId": 10001,
         "FirstName": "Новый",
@@ -81,7 +81,7 @@
       }
     },
     {
-      "name": "(Width=отрицательное значение) Main Ws / UsersProfileService / EditProfile",
+      "name": "(Width=отрицательное значение) EditProfile",
       "request": {
         "UserId": 10001,
         "FirstName": "Новый",
