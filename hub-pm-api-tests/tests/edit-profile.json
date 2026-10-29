@@ -1,0 +1,110 @@
+{
+  "method": "Main Ws / UsersProfileService / EditProfile",
+  "description": "Редактирование профиля пользователя. Валидный тест - все поля заполнены, дальше меняется одно поле, остальные валидные.",
+  "tests": [
+    {
+      "name": "(валидные данные) Main Ws / UsersProfileService / EditProfile",
+      "request": {
+        "UserId": 10001,
+        "FirstName": "Новый",
+        "LastName": "Человек",
+        "MiddleName": "Проверка",
+        "DateOfBrith": "1980-10-10T00:00:00",
+        "Notice": "Тестовое описание профиля",
+        "AvatarColor": "avatar-sea-bright",
+        "TimeZoneOffset": 7,
+        "Foto": null
+      },
+      "rules": {
+        "ErrorMessage": null,
+        "IsSuccess": true,
+        "Value.UserId": 10001,
+        "Value.FirstName": "Новый",
+        "Value.LastName": "Человек",
+        "Value.MiddleName": "Проверка",
+        "Value.Notice": "Тестовое описание профиля",
+        "Value.AvatarColor": "avatar-sea-bright",
+        "Value.DateOfBrith": "1980-10-10T00:00:00",
+        "Value.TimeZoneOffset": 7
+      }
+    },
+    {
+      "name": "(Height=отрицательное значение) Main Ws / UsersProfileService / EditProfile",
+      "request": {
+        "UserId": 10001,
+        "FirstName": "Новый",
+        "LastName": "Человек",
+        "MiddleName": "Проверка",
+        "DateOfBrith": "1980-10-10T00:00:00",
+        "Notice": "Тестовое описание профиля",
+        "AvatarColor": "avatar-sea-bright",
+        "TimeZoneOffset": 7,
+        "Foto": {
+          "Image": "data:image/jpeg;base64,...",
+          "Width": 735,
+          "MaxHight": 200,
+          "MaxWidth": 200,
+          "Left": 0,
+          "Top": 0,
+          "Height": -300
+        }
+      },
+      "rules": {
+        "IsSuccess": false,
+        "ErrorCode": 500
+      }
+    },
+    {
+      "name": "(Width=0) Main Ws / UsersProfileService / EditProfile",
+      "request": {
+        "UserId": 10001,
+        "FirstName": "Новый",
+        "LastName": "Человек",
+        "MiddleName": "Проверка",
+        "DateOfBrith": "1980-10-10T00:00:00",
+        "Notice": "Тестовое описание профиля",
+        "AvatarColor": "avatar-sea-bright",
+        "TimeZoneOffset": 7,
+        "Foto": {
+          "Image": "data:image/jpeg;base64,...",
+          "Width": 0,
+          "MaxHight": 200,
+          "MaxWidth": 200,
+          "Left": 0,
+          "Top": 0,
+          "Height": 752
+        }
+      },
+      "rules": {
+        "IsSuccess": false,
+        "ErrorCode": 500
+      }
+    },
+    {
+      "name": "(Width=отрицательное значение) Main Ws / UsersProfileService / EditProfile",
+      "request": {
+        "UserId": 10001,
+        "FirstName": "Новый",
+        "LastName": "Человек",
+        "MiddleName": "Проверка",
+        "DateOfBrith": "1980-10-10T00:00:00",
+        "Notice": "Тестовое описание профиля",
+        "AvatarColor": "avatar-sea-bright",
+        "TimeZoneOffset": 7,
+        "Foto": {
+          "Image": "data:image/jpeg;base64,...",
+          "Width": -300,
+          "MaxHight": 200,
+          "MaxWidth": 200,
+          "Left": 0,
+          "Top": 0,
+          "Height": 752
+        }
+      },
+      "rules": {
+        "IsSuccess": false,
+        "ErrorCode": 500
+      }
+    }
+  ]
+}
