@@ -1,9 +1,9 @@
 {
-  "method": "Main Ws / PerformersSaveService / CreateUser",
+  "method": "CreateUser",
   "description": "Создание пользователя. Валидный тест - все поля заполнены, дальше меняется одно поле, остальные валидные.",
   "tests": [
     {
-      "name": "(Email=без @) Main Ws / PerformersSaveService / CreateUser - ошибка",
+      "name": "(Email=без @) CreateUser - ошибка",
       "request": {
         "LastName": "Тестов",
         "FirstName": "Тест",
