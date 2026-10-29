@@ -27,10 +27,22 @@ Postman (WebSocket), внутренний конструктор API-автот�
 
 Все материалы - с проекта Hub-PM, данные обезличены.
 
+### API-тесты (запросы и правила проверок)
+
+- [Редактирование профиля](hub-pm-api-tests/tests/edit-profile.json) - 4 теста: валидные данные и параметры обрезки фото
+- [Создание пользователя](hub-pm-api-tests/tests/create-user.json) - тест на некорректный email
+- [Список сотрудников руководителя](hub-pm-api-tests/tests/employees-for-manager-list.json) - тест поиска по части фамилии
+- [Сценарий: карта связей задач](hub-pm-api-tests/tests/scenario-task-relations.json) - 8 шагов, Id задач передаются между шагами через переменные
+
+### Чек-листы и проверки
+
 - [Чек-лист: создание пользователя](hub-pm-api-tests/checklists/create-user.md) - 110 проверок
 - [Чек-лист: получение списка сотрудников руководителя](hub-pm-api-tests/checklists/employees-for-manager-list.md) - 47 проверок
 - [Сценарии из юнитов](hub-pm-api-tests/scenarios/scenarios.md) - 3 сценария: план на день, карта связей задач, шеринговая задача
 - [Проверки прав доступа](hub-pm-api-tests/security/access-checks.md) - прогон под пользователями с разными ролями
+
+### UI-автотесты и баг-репорты
+
 - [UI-автотесты](hub-pm-ui-autotests/ui-autotests.md) - 3 теста интерфейса: папки и дашборды
 - [Баг-репорты](bug-reports/bug-reports.md) - 3 примера: функциональный баг, ошибка метода, права доступа
 
