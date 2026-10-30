@@ -32,7 +32,7 @@ Postman (WebSocket), внутренний конструктор API-автот�
 - [Редактирование профиля](hub-pm-api-tests/tests/edit-profile.json) - 4 теста: валидные данные и параметры обрезки фото
 - [Создание пользователя](hub-pm-api-tests/tests/create-user.json) - тест на некорректный email
 - [Список сотрудников руководителя](hub-pm-api-tests/tests/employees-for-manager-list.json) - тест поиска по части фамилии
-- [Сценарий: карта связей задач](hub-pm-api-tests/tests/scenario-task-relations.json) - 8 шагов, Id задач передаются между шагами через переменные
+- [Сценарий: шеринговая задача в плане на день](tests/scenario-task-daily-plan.json) - 8 шагов, Id задачи и сотрудника передаются между шагами через переменные
 
 ### Чек-листы и проверки
 
