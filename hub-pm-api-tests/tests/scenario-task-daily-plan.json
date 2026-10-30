@@ -1,0 +1,221 @@
+{
+  "name": "Назначить шерринговую задачу сотруднику в План на день",
+  "connection": {
+    "accountsFile": "accounts.json",
+    "token": "token"
+  },
+  "steps": [
+    {
+      "step": 2,
+      "title": "Создать задачу",
+      "method": "TaskCreate",
+      "request": {
+        "DifficultyId": "00000000-0000-0000-0000-000000000001",
+        "Name": "тестовая задача",
+        "PriorityId": 2311,
+        "QueueId": "00000000-0000-0000-0000-000000000002",
+        "StatusId": 7726,
+        "TypeId": "00000000-0000-0000-0000-000000000003"
+      },
+      "rules": [],
+      "exportValues": [
+        {
+          "propertyPath": "Value.Task.Id",
+          "variableName": "TaskId"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Обновить статус задачи",
+      "method": "UpdateStatus",
+      "request": {
+        "StatusId": 7730,
+        "TaskIds": [
+          "${Parameter.TaskId}"
+        ]
+      },
+      "rules": [
+        {
+          "path": "IsSuccess",
+          "valueType": "constant",
+          "value": true
+        },
+        {
+          "path": "ErrorMessage",
+          "valueType": "constant",
+          "value": null
+        },
+        {
+          "path": "Value.TaskIds[0]",
+          "valueType": "variable",
+          "value": "TaskId"
+        },
+        {
+          "path": "Value.StatusId",
+          "valueType": "constant",
+          "value": 7730
+        }
+      ],
+      "exportValues": []
+    },
+    {
+      "step": 4,
+      "title": "Получение рабочего пространства по id",
+      "method": "GetNamespaceById",
+      "request": {
+        "NamespaceId": "00000000-0000-0000-0000-000000000007"
+      },
+      "rules": [
+        {
+          "path": "IsSuccess",
+          "valueType": "constant",
+          "value": true
+        },
+        {
+          "path": "ErrorMessage",
+          "valueType": "constant",
+          "value": null
+        },
+        {
+          "path": "Value.NamespaceId",
+          "valueType": "constant",
+          "value": "00000000-0000-0000-0000-000000000007"
+        }
+      ],
+      "exportValues": [
+        {
+          "propertyPath": "Value.EmployeeList[0].UserId",
+          "variableName": "UserId"
+        },
+        {
+          "propertyPath": "Value.NamespaceId",
+          "variableName": "NamespaceId"
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Добавить исполнителя",
+      "method": "AddPerformer",
+      "request": {
+        "UserId": "${Parameter.UserId}",
+        "UserIds": [
+          "${Parameter.UserId}"
+        ],
+        "TaskId": "${Parameter.TaskId}"
+      },
+      "rules": [
+        {
+          "path": "IsSuccess",
+          "valueType": "constant",
+          "value": true
+        },
+        {
+          "path": "ErrorMessage",
+          "valueType": "constant",
+          "value": null
+        },
+        {
+          "path": "Value.TaskId",
+          "valueType": "variable",
+          "value": "TaskId"
+        },
+        {
+          "path": "Value.Performers[0].UserId",
+          "valueType": "variable",
+          "value": "UserId"
+        }
+      ],
+      "exportValues": []
+    },
+    {
+      "step": 6,
+      "title": "Добавление/перемещение задачи в план на день",
+      "method": "Add",
+      "request": {
+        "UserId": "${Parameter.UserId}",
+        "Number": 0,
+        "TaskId": "${Parameter.TaskId}"
+      },
+      "rules": [
+        {
+          "path": "IsSuccess",
+          "valueType": "constant",
+          "value": true
+        },
+        {
+          "path": "ErrorMessage",
+          "valueType": "constant",
+          "value": null
+        },
+        {
+          "path": "Value",
+          "valueType": "constant",
+          "value": true
+        }
+      ],
+      "exportValues": []
+    },
+    {
+      "step": 7,
+      "title": "Получение плана на день пользователей",
+      "method": "GetList",
+      "request": {
+        "PerformerIds": [
+          "${Parameter.UserId}"
+        ],
+        "Page": {
+          "Skip": 0,
+          "Take": 30
+        }
+      },
+      "rules": [
+        {
+          "path": "IsSuccess",
+          "valueType": "constant",
+          "value": true
+        },
+        {
+          "path": "ErrorMessage",
+          "valueType": "constant",
+          "value": null
+        },
+        {
+          "path": "Value.TaskPerformerList[0].Performer.Id",
+          "valueType": "variable",
+          "value": "UserId"
+        }
+      ],
+      "exportValues": []
+    },
+    {
+      "step": 8,
+      "title": "Удалить задачу",
+      "method": "TaskRemove",
+      "request": {
+        "TaskIds": [
+          "${Parameter.TaskId}"
+        ]
+      },
+      "rules": [
+        {
+          "path": "IsSuccess",
+          "valueType": "constant",
+          "value": true
+        },
+        {
+          "path": "ErrorMessage",
+          "valueType": "constant",
+          "value": null
+        },
+        {
+          "path": "Value.TaskIds[0]",
+          "valueType": "variable",
+          "value": "TaskId"
+        }
+      ],
+      "exportValues": []
+    }
+  ]
+}
